@@ -18,6 +18,19 @@
   color: white;
 }
 
+.input-group {
+  margin: 20px 0px;
+}
+
+td, th {
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+td {
+  width: 25%
+}
+
 li.active {
   color: crimson;
 }
@@ -26,11 +39,3 @@ li.active {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

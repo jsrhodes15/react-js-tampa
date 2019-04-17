@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
 import AboutMe from './components/AboutMe';
+import Weather from './components/Weather';
 
 import './App.css';
 
@@ -25,9 +26,9 @@ class App extends Component {
           </header>
 
 
-          <Route exact path="/" render={(props) => <div>We are home!</div>}/>
+          <Route exact path="/" render={() => <div>We are home!</div>}/>
           <Route exact path="/about" render={(props) => <AboutMe {...props} />}/>
-          <Route exact path="/weather" render={(props) => <div>Weather search</div>}/>
+          <Route exact path="/weather" render={(props) => <Weather {...props} />} />
         </Router>
       </div>
     );
