@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+
+import AboutMe from './components/AboutMe';
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Router>
+          <header className="App-header">
+            <ul>
+              <li>
+                <NavLink exact to="/" activeClassName="active">Home</NavLink>
+              </li>
+              <li>
+                <NavLink exact to="/about" activeClassName="active">About</NavLink>
+              </li>
+              <li>
+                <NavLink exact to="/weather" activeClassName="active">Weather</NavLink>
+              </li>
+            </ul>
+          </header>
+
+
+          <Route exact path="/" render={(props) => <div>We are home!</div>}/>
+          <Route exact path="/about" render={(props) => <AboutMe {...props} />}/>
+          <Route exact path="/weather" render={(props) => <div>Weather search</div>}/>
+        </Router>
       </div>
     );
   }
